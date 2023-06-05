@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api")
 public class ArticleController {
