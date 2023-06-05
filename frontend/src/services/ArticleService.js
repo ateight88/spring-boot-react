@@ -28,6 +28,10 @@ const findByCategory = category => {
   return http.get(`/articles?department=${category}`);
 };
 
+const findByTitle = title => {
+  return http.get(`/articles?title=${title}`);
+};
+
 const ArticleService = {
   getAll,
   get,
@@ -36,6 +40,7 @@ const ArticleService = {
   remove,
   removeAll,
   findByCategory,
+  findByTitle,
 };
 
 export default ArticleService;

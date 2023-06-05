@@ -109,7 +109,7 @@ const App = () => {
               path='/user-login'
               element={<UserLogin onLogin={handleLogin} />}
             />
-            <Route path='/' element={<ArticlesList />} />
+            <Route path='/articles' element={<ArticlesList />} />
             <Route
               path='/all-articles'
               element={<AllArticles data={userDetails} />}

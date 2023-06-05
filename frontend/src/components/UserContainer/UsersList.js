@@ -113,19 +113,19 @@ const UsersList = () => {
               <label>
                 <strong>Title:</strong>
               </label>{' '}
-              {currentUser.title}
+              {currentUser.name}
             </div>
             <div>
               <label>
-                <strong>Description:</strong>
+                <strong>Department:</strong>
               </label>{' '}
-              {currentUser.description}
+              {currentUser.department}
             </div>
             <div>
               <label>
-                <strong>Status:</strong>
+                <strong>Articles:</strong>
               </label>{' '}
-              {currentUser.published ? 'Active' : 'Not Active'}
+              {currentUser.articles.length}
             </div>
 
             <Link

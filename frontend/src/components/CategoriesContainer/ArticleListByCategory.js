@@ -40,7 +40,7 @@ const ArticleListByCategory = ({ category }) => {
 
   return (
     <div>
-      <h2>{category} Articles</h2>
+      <h2>{category} articles: </h2>
       {articles.length === 0 ? (
         <p>No {category} articles available</p>
       ) : (
