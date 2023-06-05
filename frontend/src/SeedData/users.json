@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Coleman",
+    "department": "sports",
+    "articles": [],
+    "createdAt": "2023-05-30T08:00:10.945Z",
+    "modifiedAt": "2023-05-29T22:33:59.184Z"
+  },
+  {
+    "name": "Rudolph",
+    "department": "current_affairs",
+    "articles": [],
+    "createdAt": "2023-05-30T06:29:57.935Z",
+    "modifiedAt": "2023-05-29T22:59:30.444Z"
+  },
+  {
+    "name": "Oliver",
+    "department": "current_affairs",
+    "articles": [],
+    "createdAt": "2023-05-30T06:04:57.948Z",
+    "modifiedAt": "2023-05-30T05:10:13.462Z"
+  },
+  {
+    "name": "Brando",
+    "department": "lifestyle",
+    "articles": [],
+    "createdAt": "2023-05-30T01:17:23.200Z",
+    "modifiedAt": "2023-05-30T02:08:50.155Z"
+  },
+  {
+    "name": "Tod",
+    "department": "lifestyle",
+    "articles": [],
+    "createdAt": "2023-05-29T18:12:16.307Z",
+    "modifiedAt": "2023-05-29T14:47:51.588Z"
+  },
+  {
+    "name": "Muriel",
+    "department": "lifestyle",
+    "articles": [],
+    "createdAt": "2023-05-29T22:02:11.864Z",
+    "modifiedAt": "2023-05-30T10:11:56.295Z"
+  },
+  {
+    "name": "Myrtle",
+    "department": "current_affairs",
+    "articles": [],
+    "createdAt": "2023-05-30T11:26:23.656Z",
+    "modifiedAt": "2023-05-30T05:04:20.996Z"
+  },
+  {
+    "name": "Dessie",
+    "department": "sports",
+    "articles": [],
+    "createdAt": "2023-05-29T19:42:12.370Z",
+    "modifiedAt": "2023-05-30T11:09:59.163Z"
+  },
+  {
+    "name": "Gabriel",
+    "department": "sports",
+    "articles": [],
+    "createdAt": "2023-05-29T14:14:24.366Z",
+    "modifiedAt": "2023-05-29T17:30:41.475Z"
+  },
+  {
+    "name": "Vance",
+    "department": "current_affairs",
+    "articles": [],
+    "createdAt": "2023-05-30T01:01:23.288Z",
+    "modifiedAt": "2023-05-29T20:38:18.806Z"
+  }
+]
