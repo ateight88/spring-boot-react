@@ -47,11 +47,6 @@ const App = () => {
           </a>
           <div className='navbar-nav mr-auto'>
             <li className='nav-item'>
-              <Link to={'/user-login'} className='nav-link'>
-                UserLogin
-              </Link>
-            </li>
-            <li className='nav-item'>
               <Link to={'/current-affairs'} className='nav-link'>
                 CurrentAffairs
               </Link>
@@ -71,7 +66,7 @@ const App = () => {
                 LifeStyle
               </Link>
             </li>
-            {isAuthenticated && (
+            {/* {isAuthenticated && (
               <>
                 <li className='nav-item'>
                   <Link to={'/user-details'} className='nav-link'>
@@ -88,19 +83,47 @@ const App = () => {
                     Add User
                   </Link>
                 </li>
-
-                <li className='nav-item'>
-                  <Link
-                    to={'/all-articles'}
-                    className='nav-link'
-                    onClick={handleLogout}
-                  >
-                    Logout
-                  </Link>
-                </li>
               </>
-            )}
+            )} */}
           </div>
+          {!isAuthenticated && (
+            <div className='navbar-nav ml-auto'>
+              <li className='nav-item '>
+                <Link to={'/user-login'} className='nav-link'>
+                  UserLogin
+                </Link>
+              </li>
+            </div>
+          )}
+
+          {isAuthenticated && (
+            <div className='navbar-nav ml-auto'>
+              <li className='nav-item'>
+                <Link to={'/user-details'} className='nav-link'>
+                  UserDetails
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link to={'/add-article'} className='nav-link'>
+                  Add Article
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link to={'/add-user'} className='nav-link'>
+                  Add User
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link
+                  to={'/all-articles'}
+                  className='nav-link'
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Link>
+              </li>
+            </div>
+          )}
         </nav>
 
         <div className='container mt-3'>
