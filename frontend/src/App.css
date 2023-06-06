@@ -97,9 +97,10 @@
   margin-bottom: 20px;
 }
 
-.category-background {
+/* .category-background {
   background-image: 'https://source.unsplash.com/random/?nature?sig=111';
-}
+} */
+
 .category-background h2 {
   color: azure;
 }
