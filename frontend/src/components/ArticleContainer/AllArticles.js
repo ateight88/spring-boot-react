@@ -49,11 +49,11 @@ const AllArticles = () => {
           <div
             className='category-background'
             style={{
-              backgroundImage: `url(https://source.unsplash.com/random/?news?headlines&sig=111)`,
+              backgroundImage: `url(https://source.unsplash.com/random/?news&sig=111)`,
             }}
           >
             <div className='all-articles-container'>
-              <h2>HeadLine</h2>
+              <h2 className='all-articles-title'>HeadLine</h2>
               <ul>
                 {articleDetails
                   .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
@@ -78,7 +78,7 @@ const AllArticles = () => {
             </div>
 
             <div className='all-articles-container'>
-              <h2>Most Recent Articles</h2>
+              <h2 className='all-articles-title'>Most Recent Articles</h2>
               <ul>
                 {articleDetails
                   .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
@@ -104,7 +104,7 @@ const AllArticles = () => {
             </div>
 
             <div className='all-articles-container'>
-              <h2>Most Read Articles</h2>
+              <h2 className='all-articles-title'>Most Read Articles</h2>
               <ul>
                 {articleDetails
                   .sort((a, b) => b.numberOfReads - a.numberOfReads)
@@ -129,23 +129,25 @@ const AllArticles = () => {
                     ) : null
                   )}
               </ul>
-              <div className='pagination'>
-                <button
-                  onClick={handlePreviousPage}
-                  disabled={currentPage === 1}
-                >
-                  Previous
-                </button>
-                <h3 className='pagination'>{`Page: ${currentPage}`}</h3>
-                <button
-                  onClick={handleNextPage}
-                  disabled={
-                    currentPage ===
-                    Math.ceil(articleDetails.length / articlesPerPage)
-                  }
-                >
-                  Next
-                </button>
+              <div className='pagination-container'>
+                <div className='pagination'>
+                  <button
+                    onClick={handlePreviousPage}
+                    disabled={currentPage === 1}
+                  >
+                    Previous
+                  </button>
+                  <h3 className='pagination'>{`Page: ${currentPage}`}</h3>
+                  <button
+                    onClick={handleNextPage}
+                    disabled={
+                      currentPage ===
+                      Math.ceil(articleDetails.length / articlesPerPage)
+                    }
+                  >
+                    Next
+                  </button>
+                </div>
               </div>
             </div>
 
