@@ -66,25 +66,6 @@ const App = () => {
                 LifeStyle
               </Link>
             </li>
-            {/* {isAuthenticated && (
-              <>
-                <li className='nav-item'>
-                  <Link to={'/user-details'} className='nav-link'>
-                    UserDetails
-                  </Link>
-                </li>
-                <li className='nav-item'>
-                  <Link to={'/add-article'} className='nav-link'>
-                    Add Article
-                  </Link>
-                </li>
-                <li className='nav-item'>
-                  <Link to={'/add-user'} className='nav-link'>
-                    Add User
-                  </Link>
-                </li>
-              </>
-            )} */}
           </div>
           {!isAuthenticated && (
             <div className='navbar-nav ml-auto'>
@@ -108,9 +89,28 @@ const App = () => {
                   Add Article
                 </Link>
               </li>
+              {userDetails[0]?.name === 'Admin' && (
+                <>
+                  <li className='nav-item'>
+                    <Link to={'/articles'} className='nav-link'>
+                      Articles
+                    </Link>
+                  </li>
+                  <li className='nav-item'>
+                    <Link to={'/users'} className='nav-link'>
+                      Users
+                    </Link>
+                  </li>
+                  <li className='nav-item'>
+                    <Link to={'/add-user'} className='nav-link'>
+                      Add User
+                    </Link>
+                  </li>
+                </>
+              )}
               <li className='nav-item'>
-                <Link to={'/add-user'} className='nav-link'>
-                  Add User
+                <Link to={''} className='nav-link login-name-disabled' disabled>
+                  Welcome back {userDetails[0]?.name}
                 </Link>
               </li>
               <li className='nav-item'>

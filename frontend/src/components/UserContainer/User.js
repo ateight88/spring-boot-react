@@ -65,15 +65,34 @@ const User = () => {
       });
   };
 
+  // const deleteUser = () => {
+  //   UserDataService.remove(currentUser.id)
+  //     .then(response => {
+  //       console.log(response.data);
+  //       navigate('/users');
+  //     })
+  //     .catch(e => {
+  //       console.log(e);
+  //     });
+  // };
+
   const deleteUser = () => {
-    UserDataService.remove(currentUser.id)
-      .then(response => {
-        console.log(response.data);
-        navigate('/users');
-      })
-      .catch(e => {
-        console.log(e);
-      });
+    const confirmDelete = window.confirm(
+      'Are you sure you want to delete this user? Please note that this action cannot be undone.'
+    );
+
+    if (confirmDelete) {
+      UserDataService.remove(currentUser.id)
+        .then(response => {
+          console.log(response.data);
+          setMessage('The user was deleted successfully!');
+          navigate('/users');
+          window.location.reload();
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    }
   };
 
   return (

@@ -112,3 +112,8 @@
 .pagination button {
   border-radius: 15%;
 }
+
+.login-name-disabled {
+  pointer-events: none;
+  color: gray;
+}

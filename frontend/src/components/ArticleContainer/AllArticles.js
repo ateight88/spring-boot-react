@@ -49,7 +49,7 @@ const AllArticles = () => {
           <div
             className='category-background'
             style={{
-              backgroundImage: `url(https://source.unsplash.com/random/?news&sig=111)`,
+              backgroundImage: `url(https://source.unsplash.com/random/?news?headlines&sig=111)`,
             }}
           >
             <div className='all-articles-container'>

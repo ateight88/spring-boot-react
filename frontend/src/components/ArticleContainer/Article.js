@@ -201,7 +201,8 @@ const Article = ({ isAuthenticated }) => {
                     {currentArticle.numberOfReads}
                   </div>
                 </form>
-                {currentArticle.published ? (
+
+                {/* {currentArticle.published ? (
                   <button
                     className='badge badge-primary mr-2'
                     onClick={() => updatePublished(false)}
@@ -215,6 +216,27 @@ const Article = ({ isAuthenticated }) => {
                   >
                     Publish
                   </button>
+                )} */}
+                {currentArticle.published ? (
+                  storedName === 'Admin' ? (
+                    <button
+                      className='badge badge-primary mr-2'
+                      onClick={() => updatePublished(false)}
+                    >
+                      Unpublish
+                    </button>
+                  ) : (
+                    <span className='badge badge-info mr-2'>Published</span>
+                  )
+                ) : storedName === 'Admin' ? (
+                  <button
+                    className='badge badge-primary mr-2'
+                    onClick={() => updatePublished(true)}
+                  >
+                    Publish
+                  </button>
+                ) : (
+                  <span className='badge badge-warning mr-2'>Unpublished</span>
                 )}
                 <button
                   className='badge badge-danger mr-2'
