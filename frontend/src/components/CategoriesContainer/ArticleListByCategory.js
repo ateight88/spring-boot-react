@@ -5,6 +5,8 @@ import '../../App.css';
 
 const ArticleListByCategory = ({ category }) => {
   const [articles, setArticles] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesPerPage = 5;
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -38,6 +40,14 @@ const ArticleListByCategory = ({ category }) => {
     return new Date(date).toLocaleDateString(undefined, options);
   };
 
+  const handlePreviousPage = () => {
+    setCurrentPage(prevPage => prevPage - 1);
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage(prevPage => prevPage + 1);
+  };
+
   return (
     <div
       className='category-background'
@@ -52,6 +62,10 @@ const ArticleListByCategory = ({ category }) => {
         <ul>
           {articles
             .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+            .slice(
+              (currentPage - 1) * articlesPerPage,
+              currentPage * articlesPerPage
+            )
             .map(article => (
               <div className='article-card' key={article.id}>
                 <h1>{article.title}</h1>
@@ -64,6 +78,20 @@ const ArticleListByCategory = ({ category }) => {
             ))}
         </ul>
       )}
+      <div className='pagination'>
+        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+          Previous
+        </button>
+        <h3 className='pagination'>{`Page: ${currentPage}`}</h3>
+        <button
+          onClick={handleNextPage}
+          disabled={
+            currentPage === Math.ceil(articles.length / articlesPerPage)
+          }
+        >
+          Next
+        </button>
+      </div>
       <h2>end:</h2>
     </div>
   );

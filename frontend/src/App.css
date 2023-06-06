@@ -104,3 +104,11 @@
 .category-background h2 {
   color: azure;
 }
+
+.pagination h3 {
+  color: azure;
+}
+
+.pagination button {
+  border-radius: 15%;
+}

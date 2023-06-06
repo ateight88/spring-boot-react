@@ -36,18 +36,6 @@ const Article = ({ isAuthenticated }) => {
     });
   };
 
-  // const getArticle = id => {
-  //   ArticleDataService.get(id)
-  //     .then(response => {
-  //       setCurrentArticle(response.data);
-  //       incrementReadCounter();
-  //       console.log(response.data);
-  //     })
-  //     .catch(e => {
-  //       console.log(e);
-  //     });
-  // };
-
   const getArticle = async id => {
     try {
       const response = await ArticleDataService.get(id);
@@ -102,6 +90,7 @@ const Article = ({ isAuthenticated }) => {
       .then(response => {
         console.log(response.data);
         setMessage('The article was updated successfully!');
+        setTimeout(() => setMessage(''), 2000);
       })
       .catch(e => {
         console.log(e);

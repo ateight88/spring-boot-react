@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 const AllArticles = () => {
   const [articleDetails, setArticleDetails] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesPerPage = 5;
 
   useEffect(() => {
     const fetchArticleDetails = async () => {
@@ -27,6 +29,14 @@ const AllArticles = () => {
   const formatDate = date => {
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     return new Date(date).toLocaleDateString(undefined, options);
+  };
+
+  const handlePreviousPage = () => {
+    setCurrentPage(prevPage => prevPage - 1);
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage(prevPage => prevPage + 1);
   };
 
   return (
@@ -98,6 +108,52 @@ const AllArticles = () => {
               <ul>
                 {articleDetails
                   .sort((a, b) => b.numberOfReads - a.numberOfReads)
+                  .slice(
+                    (currentPage - 1) * articlesPerPage,
+                    currentPage * articlesPerPage
+                  )
+                  .map(article =>
+                    article.published ? (
+                      <div className='all-articles-card' key={article.id}>
+                        <li>
+                          <h3>{article.title}</h3>
+                          <p>{article.summary}</p>
+                          <p>Author's Field: {article.department}</p>
+                          <p>Published At: {formatDate(article.createdAt)}</p>
+                          <p>Popularity: {article.numberOfReads}</p>
+                          <Link to={'/articles/' + article.id}>
+                            Read More...
+                          </Link>
+                        </li>
+                      </div>
+                    ) : null
+                  )}
+              </ul>
+              <div className='pagination'>
+                <button
+                  onClick={handlePreviousPage}
+                  disabled={currentPage === 1}
+                >
+                  Previous
+                </button>
+                <h3 className='pagination'>{`Page: ${currentPage}`}</h3>
+                <button
+                  onClick={handleNextPage}
+                  disabled={
+                    currentPage ===
+                    Math.ceil(articleDetails.length / articlesPerPage)
+                  }
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+
+            {/* <div className='all-articles-container'>
+              <h2>Most Read Articles</h2>
+              <ul>
+                {articleDetails
+                  .sort((a, b) => b.numberOfReads - a.numberOfReads)
                   // .slice(0, 5)
                   .map(article =>
                     article.published ? (
@@ -116,7 +172,8 @@ const AllArticles = () => {
                     ) : null
                   )}
               </ul>
-            </div>
+            </div> */}
+            <h2>end:</h2>
           </div>
         </>
       )}

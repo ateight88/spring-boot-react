@@ -58,7 +58,7 @@ const User = () => {
       .then(response => {
         console.log(response.data);
         setMessage('The user was updated successfully!');
-        setTimeout(() => setMessage(''), 1000);
+        setTimeout(() => setMessage(''), 2000);
       })
       .catch(e => {
         console.log(e);
