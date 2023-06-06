@@ -36,74 +36,87 @@ const AllArticles = () => {
         <p>No articles available</p>
       ) : (
         <>
-          <div className='all-articles-container'>
-            <h2>HeadLine</h2>
-            <ul>
-              {articleDetails
-                .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-                .slice(0, 1)
-                .map(article =>
-                  article.published ? (
-                    <div className='all-articles-card' key={article.id}>
-                      <li>
-                        <h3>{article.title}</h3>
-                        <p>{article.summary}</p>
-                        <p>Author's Field: {article.department}</p>
-                        <p>Published At: {formatDate(article.createdAt)}</p>
-                        <p>Popularity: {article.numberOfReads}</p>
-                        <Link to={'/articles/' + article.id}>Read More...</Link>
-                      </li>
-                    </div>
-                  ) : null
-                )}
-            </ul>
-          </div>
+          <div
+            className='category-background'
+            style={{
+              backgroundImage: `url(https://source.unsplash.com/random/?news&sig=111)`,
+            }}
+          >
+            <div className='all-articles-container'>
+              <h2>HeadLine</h2>
+              <ul>
+                {articleDetails
+                  .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+                  .slice(0, 1)
+                  .map(article =>
+                    article.published ? (
+                      <div className='all-articles-card' key={article.id}>
+                        <li>
+                          <h3>{article.title}</h3>
+                          <p>{article.summary}</p>
+                          <p>Author's Field: {article.department}</p>
+                          <p>Published At: {formatDate(article.createdAt)}</p>
+                          <p>Popularity: {article.numberOfReads}</p>
+                          <Link to={'/articles/' + article.id}>
+                            Read More...
+                          </Link>
+                        </li>
+                      </div>
+                    ) : null
+                  )}
+              </ul>
+            </div>
 
-          <div className='all-articles-container'>
-            <h2>Most Recent Articles</h2>
-            <ul>
-              {articleDetails
-                .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-                .slice(1, 5)
-                .map(article =>
-                  article.published ? (
-                    <div className='all-articles-card' key={article.id}>
-                      <li>
-                        <h3>{article.title}</h3>
-                        <p>{article.summary}</p>
-                        {/* <p>{article.full}</p> */}
-                        <p>Author's Field: {article.department}</p>
-                        <p>Published At: {formatDate(article.createdAt)}</p>
-                        <p>Popularity: {article.numberOfReads}</p>
-                        <Link to={'/articles/' + article.id}>Read More...</Link>
-                      </li>
-                    </div>
-                  ) : null
-                )}
-            </ul>
-          </div>
+            <div className='all-articles-container'>
+              <h2>Most Recent Articles</h2>
+              <ul>
+                {articleDetails
+                  .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+                  .slice(1, 5)
+                  .map(article =>
+                    article.published ? (
+                      <div className='all-articles-card' key={article.id}>
+                        <li>
+                          <h3>{article.title}</h3>
+                          <p>{article.summary}</p>
+                          {/* <p>{article.full}</p> */}
+                          <p>Author's Field: {article.department}</p>
+                          <p>Published At: {formatDate(article.createdAt)}</p>
+                          <p>Popularity: {article.numberOfReads}</p>
+                          <Link to={'/articles/' + article.id}>
+                            Read More...
+                          </Link>
+                        </li>
+                      </div>
+                    ) : null
+                  )}
+              </ul>
+            </div>
 
-          <div className='all-articles-container'>
-            <h2>Most Read Articles</h2>
-            <ul>
-              {articleDetails
-                .sort((a, b) => b.numberOfReads - a.numberOfReads)
-                // .slice(0, 5)
-                .map(article =>
-                  article.published ? (
-                    <div className='all-articles-card' key={article.id}>
-                      <li>
-                        <h3>{article.title}</h3>
-                        <p>{article.summary}</p>
-                        <p>Author's Field: {article.department}</p>
-                        <p>Published At: {formatDate(article.createdAt)}</p>
-                        <p>Popularity: {article.numberOfReads}</p>
-                        <Link to={'/articles/' + article.id}>Read More...</Link>
-                      </li>
-                    </div>
-                  ) : null
-                )}
-            </ul>
+            <div className='all-articles-container'>
+              <h2>Most Read Articles</h2>
+              <ul>
+                {articleDetails
+                  .sort((a, b) => b.numberOfReads - a.numberOfReads)
+                  // .slice(0, 5)
+                  .map(article =>
+                    article.published ? (
+                      <div className='all-articles-card' key={article.id}>
+                        <li>
+                          <h3>{article.title}</h3>
+                          <p>{article.summary}</p>
+                          <p>Author's Field: {article.department}</p>
+                          <p>Published At: {formatDate(article.createdAt)}</p>
+                          <p>Popularity: {article.numberOfReads}</p>
+                          <Link to={'/articles/' + article.id}>
+                            Read More...
+                          </Link>
+                        </li>
+                      </div>
+                    ) : null
+                  )}
+              </ul>
+            </div>
           </div>
         </>
       )}

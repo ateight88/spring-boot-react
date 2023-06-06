@@ -39,7 +39,12 @@ const ArticleListByCategory = ({ category }) => {
   };
 
   return (
-    <div>
+    <div
+      className='category-background'
+      style={{
+        backgroundImage: `url(https://source.unsplash.com/random/?${category}&sig=111)`,
+      }}
+    >
       <h2>{category} articles: </h2>
       {articles.length === 0 ? (
         <p>No {category} articles available</p>
