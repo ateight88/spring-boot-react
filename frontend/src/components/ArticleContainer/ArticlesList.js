@@ -120,9 +120,9 @@ const ArticlesList = () => {
             </div>
             <div>
               <label>
-                <strong>Description:</strong>
+                <strong>Summary:</strong>
               </label>{' '}
-              {currentArticle.description}
+              {currentArticle.summary.slice(0, 60)}
             </div>
             <div>
               <label>
