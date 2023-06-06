@@ -18,4 +18,3 @@ A React CRUD Application to consume Web API with Axios, display and modify data 
 - There is create, read, update, delete for Users & Articles.
 - There are multiple Search options for finding Articles; by title, summary and department.
 - Search is case insensitive and can contain spaces
-- ...
