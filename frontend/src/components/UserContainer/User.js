@@ -58,6 +58,7 @@ const User = () => {
       .then(response => {
         console.log(response.data);
         setMessage('The user was updated successfully!');
+        setTimeout(() => setMessage(''), 1000);
       })
       .catch(e => {
         console.log(e);
@@ -108,11 +109,11 @@ const User = () => {
               <label>
                 <strong>Status:</strong>
               </label>
-              {currentUser.published ? 'Published' : 'Pending'}
+              {currentUser.department ? 'Assigned' : 'Pending'}
             </div>
           </form>
 
-          {currentUser.published ? (
+          {currentUser.department ? (
             <button
               className='badge badge-primary mr-2'
               onClick={() => updateAuthor(false)}
@@ -144,7 +145,7 @@ const User = () => {
       ) : (
         <div>
           <br />
-          <p>Please click on a User...</p>
+          <p>Click on a User...</p>
         </div>
       )}
     </div>

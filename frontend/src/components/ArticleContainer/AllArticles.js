@@ -36,17 +36,16 @@ const AllArticles = () => {
         <p>No articles available</p>
       ) : (
         <>
-          <h2>HeadLine</h2>
           <div className='all-articles-container'>
+            <h2>HeadLine</h2>
             <ul>
               {articleDetails
                 .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-                // .sort((a, b) => b.numberOfReads - a.numberOfReads)
                 .slice(0, 1)
                 .map(article =>
                   article.published ? (
-                    <div className='all-articles-card'>
-                      <li key={article.id}>
+                    <div className='all-articles-card' key={article.id}>
+                      <li>
                         <h3>{article.title}</h3>
                         <p>{article.summary}</p>
                         <p>Author's Field: {article.department}</p>
@@ -59,18 +58,17 @@ const AllArticles = () => {
                 )}
             </ul>
           </div>
-          <h2>Articles</h2>
 
           <div className='all-articles-container'>
+            <h2>Most Recent Articles</h2>
             <ul>
               {articleDetails
                 .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-                // .sort((a, b) => b.numberOfReads - a.numberOfReads)
                 .slice(1, 5)
                 .map(article =>
                   article.published ? (
-                    <div className='all-articles-card'>
-                      <li key={article.id}>
+                    <div className='all-articles-card' key={article.id}>
+                      <li>
                         <h3>{article.title}</h3>
                         <p>{article.summary}</p>
                         {/* <p>{article.full}</p> */}
@@ -85,17 +83,16 @@ const AllArticles = () => {
             </ul>
           </div>
 
-          <h2>Top 10 Most Read Articles</h2>
           <div className='all-articles-container'>
+            <h2>Most Read Articles</h2>
             <ul>
               {articleDetails
-                // .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
                 .sort((a, b) => b.numberOfReads - a.numberOfReads)
-                .slice(1, 10)
+                // .slice(0, 5)
                 .map(article =>
                   article.published ? (
-                    <div className='all-articles-card'>
-                      <li key={article.id}>
+                    <div className='all-articles-card' key={article.id}>
+                      <li>
                         <h3>{article.title}</h3>
                         <p>{article.summary}</p>
                         <p>Author's Field: {article.department}</p>
