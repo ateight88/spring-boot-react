@@ -1,5 +1,7 @@
 # spring-boot-react
 
+![SGNN News App](app-img.png)
+
 ## Spring Boot MongoDB Rest CRUD API for a News application
 
 - Spring Data to work with MongoDB Database
