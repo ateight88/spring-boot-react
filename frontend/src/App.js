@@ -43,7 +43,7 @@ const App = () => {
       <div>
         <nav className='navbar navbar-expand navbar-dark bg-dark'>
           <a href='/all-articles' className='navbar-brand'>
-            S-G-G-N
+            S-G-N-N
           </a>
           <div className='navbar-nav mr-auto'>
             <li className='nav-item'>
