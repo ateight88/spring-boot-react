@@ -156,7 +156,10 @@ const App = () => {
                 <Article isAuthenticated={isAuthenticated} data={userDetails} />
               }
             />
-            <Route path='/users' element={<UsersList />} />
+            <Route
+              path='/users'
+              element={<UsersList isAuthenticated={isAuthenticated} />}
+            />
             <Route path='/add-user' element={<AddUser />} />
             <Route path='/users/:id' element={<User />} />
 

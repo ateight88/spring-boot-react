@@ -65,17 +65,6 @@ const User = () => {
       });
   };
 
-  // const deleteUser = () => {
-  //   UserDataService.remove(currentUser.id)
-  //     .then(response => {
-  //       console.log(response.data);
-  //       navigate('/users');
-  //     })
-  //     .catch(e => {
-  //       console.log(e);
-  //     });
-  // };
-
   const deleteUser = () => {
     const confirmDelete = window.confirm(
       'Are you sure you want to delete this user? Please note that this action cannot be undone.'

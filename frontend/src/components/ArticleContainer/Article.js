@@ -97,18 +97,6 @@ const Article = ({ isAuthenticated }) => {
       });
   };
 
-  // const deleteArticle = () => {
-  //   ArticleDataService.remove(currentArticle.id)
-  //     .then(response => {
-  //       console.log(response.data);
-  //       setMessage('The article was deleted successfully!');
-  //       // navigate('/articles');
-  //     })
-  //     .catch(e => {
-  //       console.log(e);
-  //     });
-  // };
-
   const deleteArticle = () => {
     const confirmDelete = window.confirm(
       'Are you sure you want to delete this article? Please note that this action cannot be undone.'
@@ -133,8 +121,6 @@ const Article = ({ isAuthenticated }) => {
       {currentArticle ? (
         <div>
           <h4>Article</h4>
-          {/* <p>{JSON.stringify(currentArticle)}</p> */}
-
           <div className='article-card'>
             <h1>{currentArticle.title}</h1>
             <p>Author's Field: {currentArticle.department}</p>
@@ -202,21 +188,6 @@ const Article = ({ isAuthenticated }) => {
                   </div>
                 </form>
 
-                {/* {currentArticle.published ? (
-                  <button
-                    className='badge badge-primary mr-2'
-                    onClick={() => updatePublished(false)}
-                  >
-                    UnPublish
-                  </button>
-                ) : (
-                  <button
-                    className='badge badge-primary mr-2'
-                    onClick={() => updatePublished(true)}
-                  >
-                    Publish
-                  </button>
-                )} */}
                 {currentArticle.published ? (
                   storedName === 'Admin' ? (
                     <button

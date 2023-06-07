@@ -1,3 +1,5 @@
+/* Don't run - For testing only */
+
 const { v4: uuidv4 } = require('uuid');
 const { faker } = require('@faker-js/faker');
 const fs = require('fs');

@@ -58,8 +58,6 @@ const LoginForm = ({ onLogin }) => {
         <button type='submit'>Login</button>
       </form>
 
-      {/* <p>{JSON.stringify(data)}</p> */}
-
       {userFound ? (
         data && data[0] && <UserDetails data={data} />
       ) : (

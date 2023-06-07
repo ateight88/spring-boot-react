@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import UserDataService from '../../services/UserService';
 import { Link } from 'react-router-dom';
 
-const UsersList = () => {
+const UsersList = ({ isAuthenticated }) => {
   const [users, setUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(-1);

@@ -41,7 +41,6 @@ const AllArticles = () => {
 
   return (
     <div>
-      {/* <p>{JSON.stringify(articleDetails[0])}</p> */}
       {articleDetails.length === 0 ? (
         <p>No articles available</p>
       ) : (
@@ -151,31 +150,6 @@ const AllArticles = () => {
                 </div>
               </div>
             </div>
-
-            {/* <div className='all-articles-container'>
-              <h2>Most Read Articles</h2>
-              <ul>
-                {articleDetails
-                  .sort((a, b) => b.numberOfReads - a.numberOfReads)
-                  // .slice(0, 5)
-                  .map(article =>
-                    article.published ? (
-                      <div className='all-articles-card' key={article.id}>
-                        <li>
-                          <h3>{article.title}</h3>
-                          <p>{article.summary}</p>
-                          <p>Author's Field: {article.department}</p>
-                          <p>Published At: {formatDate(article.createdAt)}</p>
-                          <p>Popularity: {article.numberOfReads}</p>
-                          <Link to={'/articles/' + article.id}>
-                            Read More...
-                          </Link>
-                        </li>
-                      </div>
-                    ) : null
-                  )}
-              </ul>
-            </div> */}
             <h2>end:</h2>
           </div>
         </>
